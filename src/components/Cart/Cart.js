@@ -12,9 +12,13 @@ const Cart = (props) => {
 	const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
 	const hasItems = cartCtx.items.length > 0;
 
-	const cartItemRemoveHandler = (id) => {};
+	const cartItemRemoveHandler = (id) => {
+		cartCtx.removeItem(id);
+	};
 
-	const cartItemAddHandler = (item) => {};
+	const cartItemAddHandler = (item) => {
+		cartCtx.addItem({ ...item, amount: 1 });
+	};
 
 	// item.bind(thisArg, argumentos-func) => thisArg é quando queremos passar alguma outra coisa para ser invocada pelo this que não seja o próprio item
 

@@ -1,4 +1,4 @@
-# Food Order App
+# ReactMeals
 
 Aplicativo usado para aprender conceitos envolvendo side effects em React
 

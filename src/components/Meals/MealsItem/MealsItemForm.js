@@ -10,8 +10,9 @@ const MealsItemForm = (props) => {
 	const submitHandler = (event) => {
 		event.preventDefault();
 
-		// Pega o valor passado por ref
+		// Retorna o input da comica clicada
 		const enteredAmount = amountInputRef.current.value;
+
 		// Independendte do tipo do input ser number, ele sempre será string e então é preciso converter
 		const enteredAmountNumber = +enteredAmount;
 
@@ -23,6 +24,7 @@ const MealsItemForm = (props) => {
 			setAmoutIsValid(false);
 			return;
 		}
+
 		props.onAddToCart(enteredAmountNumber);
 	}
 
@@ -39,6 +41,7 @@ const MealsItemForm = (props) => {
 					step: '1',
 					defaultValue: '1',
 			}} />
+			
 			<button>+ Add</button>
 			{!amountIsValid && <p>Please enter a valid amount (1-5)</p>}
 		</form>
